@@ -43,6 +43,13 @@ namespace FirstWebAPI.Controllers
             var updatedbook = _bookService.UpdateBook(id, book);
             return Ok(updatedbook);
         }
+        [HttpDelete("Delete-Book-Id/{id}")]
+        public IActionResult Delete(int id)
+        {
+            _bookService.Delete(id);
+            return Ok();
+
+        }
     }
 
 }

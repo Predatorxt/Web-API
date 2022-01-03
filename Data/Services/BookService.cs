@@ -53,6 +53,16 @@ namespace FirstWebAPI.Data.Services
             }
             return _book;
         }
+        public void Delete(int BookId)
+        {
+            var _book = _context.books.FirstOrDefault(n => n.Id == BookId);
+            if(_book!=null)
+            {
+                _context.books.Remove(_book);
+                _context.SaveChanges();
+            }
+
+        }
       
     }
 }
